@@ -1,0 +1,985 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #f5f7ff;
+  background: #080b14;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 25%, #17234a 0%, transparent 45%),
+    #080b14;
+}
+
+button {
+  font: inherit;
+}
+
+.dashboard {
+  width: min(1100px, 100%);
+  margin: auto;
+  padding: 30px 28px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #202943;
+  padding-bottom: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(135deg, #5378ff, #a36bff);
+}
+
+.status, .tag {
+  color: #8c9aff;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.hero {
+  text-align: center;
+  padding: 105px 10px 85px;
+}
+
+.eyebrow {
+  color: #8c9aff;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1.12;
+  letter-spacing: -4px;
+  margin: 24px 0;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #7795ff, #bd91ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.intro {
+  color: #9ba6c1;
+  max-width: 510px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+.connect {
+  border: 0;
+  border-radius: 10px;
+  padding: 15px 25px;
+  color: white;
+  background: linear-gradient(100deg, #526fff, #9564ef);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.connect:hover {
+  filter: brightness(1.15);
+}
+
+.note {
+  color: #68748f;
+  font-size: 11px;
+  margin-top: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.panel {
+  background: #111827;
+  border: 1px solid #26314d;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.number {
+  color: #778eff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.panel h2 {
+  font-size: 18px;
+  margin: 25px 0 12px;
+}
+
+.panel p {
+  color: #929db5;
+  font-size: 13px;
+  line-height: 1.8;
+  min-height: 70px;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 9px;
+}
+
+footer {
+  border-top: 1px solid #202943;
+  margin-top: 65px;
+  padding-top: 25px;
+  text-align: center;
+  color: #64718c;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .hero {
+    padding: 75px 5px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status {
+    font-size: 8px;
+  }
+}
+
+.wallet-input {
+  display: block;
+  width: 100%;
+  margin: 16px 0;
+  padding: 15px;
+  border: 1px solid #303d5c;
+  border-radius: 9px;
+  background: #0b1120;
+  color: white;
+  outline: none;
+}
+
+.wallet-input:focus {
+  border-color: #8294ff;
+}
+
+.wallet-panel {
+  max-width: 720px;
+  margin: 0 auto 35px;
+}
+
+.identity-card {
+  margin-top: 25px;
+  padding: 22px;
+  border: 1px solid #526fff;
+  border-radius: 13px;
+  background: #0b1428;
+}
+
+.identity-heading,
+.balance-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.identity-heading,
+.muted {
+  color: #8c9aff;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.verified {
+  color: #70dfae;
+  font-size: 10px;
+}
+
+.address {
+  overflow-wrap: anywhere;
+  color: #b9c5e2;
+  font-size: 12px;
+  margin: 22px 0;
+}
+
+.balance-row h3 {
+  font-size: 17px;
+}
+
+.result {
+  color: #aab8dc;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.multi-button {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.multi-button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.multi-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.multi-balance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.balance-card {
+  background: linear-gradient(145deg, #151d35, #202b49);
+  border: 1px solid rgba(120, 140, 255, 0.25);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.chain-name {
+  color: #aab7d4;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.chain-symbol {
+  color: #8b9cff;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.chain-balance {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 10px;
+  overflow-wrap: anywhere;
+}
+
+.chain-status {
+  color: #6ee7b7;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .multi-balance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.chain-id {
+  color: #8b9bbd;
+  font-size: 11px;
+  margin-top: 5px;
+}
+.explorer-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.explorer-link:hover {
+  text-decoration: underline;
+}
+.explorer-button {
+  display: inline-block;
+  width: fit-content;
+  margin: 8px 0 14px;
+  padding: 9px 14px;
+  border: 1px solid rgba(100, 160, 255, 0.35);
+  border-radius: 8px;
+  color: #8dbaff;
+  background: rgba(70, 130, 220, 0.10);
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.explorer-button:hover {
+  background: rgba(70, 130, 220, 0.22);
+  border-color: #8dbaff;
+}
+
+.portfolio-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.portfolio-stat {
+  padding: 16px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portfolio-stat span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.portfolio-stat strong {
+  font-size: 20px;
+}
+
+.portfolio-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.portfolio-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 650px;
+}
+
+.portfolio-table th,
+.portfolio-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  white-space: nowrap;
+}
+
+.portfolio-table th {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.portfolio-table td {
+  font-size: 14px;
+}
+
+.contract-address {
+  display: block;
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+  .portfolio-summary {
+    grid-template-columns: 1fr;
+  }
+}
+.explorer-link {
+  color: #4f8cff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.explorer-link:hover {
+  text-decoration: underline;
+}
+
+/* NEXORA PORTFOLIO DASHBOARD */
+
+.portfolio-dashboard {
+  padding: 24px;
+  margin: 24px 0;
+  border: 1px solid rgba(128, 128, 128, 0.18);
+  border-radius: 20px;
+  background: rgba(128, 128, 128, 0.035);
+}
+
+.portfolio-heading,
+.network-heading,
+.holdings-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.portfolio-eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  opacity: 0.65;
+}
+
+.portfolio-heading h2 {
+  font-size: 27px;
+  margin: 8px 0;
+}
+
+.portfolio-heading p,
+.network-heading p,
+.holdings-heading p {
+  font-size: 13px;
+  opacity: 0.65;
+  margin: 0;
+}
+
+.portfolio-live {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  padding: 9px 13px;
+  border-radius: 30px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.portfolio-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 26px 0;
+}
+
+.overview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  background: rgba(128, 128, 128, 0.045);
+}
+
+.overview-card span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.overview-card strong {
+  font-size: 29px;
+  font-weight: 750;
+}
+
+.overview-card small {
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.overview-primary {
+  background: linear-gradient(
+    135deg,
+    rgba(55, 110, 255, 0.18),
+    rgba(55, 110, 255, 0.04)
+  );
+  border-color: rgba(80, 130, 255, 0.3);
+}
+
+.network-overview,
+.holdings-panel {
+  margin-top: 25px;
+}
+
+.network-heading h3,
+.holdings-heading h3 {
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+
+.network-heading > span,
+.holdings-count {
+  font-size: 12px;
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: rgba(128, 128, 128, 0.1);
+}
+
+.network-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.network-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 14px;
+}
+
+.network-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.ethereum-icon {
+  background: rgba(100, 110, 180, 0.18);
+}
+
+.base-icon {
+  background: rgba(40, 100, 255, 0.18);
+  color: #4f83ff;
+}
+
+.network-card strong,
+.network-card small {
+  display: block;
+}
+
+.network-card strong {
+  font-size: 14px;
+}
+
+.network-card small {
+  font-size: 12px;
+  opacity: 0.65;
+  margin-top: 5px;
+}
+
+.holdings-panel {
+  padding-top: 24px;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.portfolio-table-wrapper {
+  margin-top: 18px;
+  overflow-x: auto;
+  border: 1px solid rgba(128, 128, 128, 0.18);
+  border-radius: 12px;
+}
+
+.portfolio-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.portfolio-table th,
+.portfolio-table td {
+  padding: 15px 13px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.13);
+}
+
+.portfolio-table th {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  opacity: 0.65;
+  background: rgba(128, 128, 128, 0.06);
+}
+
+.portfolio-table td {
+  font-size: 13px;
+}
+
+.portfolio-table tbody tr:hover {
+  background: rgba(100, 130, 255, 0.06);
+}
+
+.contract-address {
+  display: block;
+  font-size: 11px;
+  opacity: 0.55;
+  margin-top: 5px;
+}
+
+.network-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.ethereum-badge {
+  background: rgba(120, 130, 200, 0.15);
+}
+
+.base-badge {
+  background: rgba(55, 110, 255, 0.15);
+  color: #6594ff;
+}
+
+.explorer-link {
+  color: #6493ff;
+  font-weight: 650;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.explorer-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 650px) {
+  .portfolio-dashboard {
+    padding: 15px;
+  }
+
+  .portfolio-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .network-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+.network-card {
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  transition: all 0.2s ease;
+}
+
+.network-card.active-network {
+  border: 2px solid #356df3;
+  background: rgba(53, 109, 243, 0.10);
+  box-shadow: 0 0 12px rgba(53, 109, 243, 0.15);
+}
+
+.network-card:hover {
+  transform: translateY(-2px);
+  border-color: #356df3;
+}
+/* NEXORA PRO — MIDNIGHT BLUE */
+
+.portfolio-dashboard {
+  color: #e8eefc;
+}
+
+.portfolio-heading h2 {
+  color: #f4f7ff;
+  letter-spacing: -0.8px;
+}
+
+.portfolio-eyebrow {
+  color: #75a7ff;
+  letter-spacing: 2px;
+}
+
+.network-overview,
+.holdings-panel {
+  background: linear-gradient(145deg, #111d30, #0b1424);
+  border: 1px solid #263852;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.network-heading h3,
+.holdings-heading h3 {
+  color: #f1f5ff;
+}
+
+.network-heading p,
+.holdings-heading p {
+  color: #8ea2c2;
+}
+
+.network-cards {
+  gap: 14px;
+}
+
+.network-card {
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #14233a;
+  border: 1px solid #293e5d;
+  color: #edf3ff;
+  transition: all 0.25s ease;
+}
+
+.network-card strong {
+  display: block;
+  font-size: 15px;
+  color: #f4f7ff;
+}
+
+.network-card small {
+  display: block;
+  margin-top: 5px;
+  color: #91a6c5;
+}
+
+.network-card:hover {
+  transform: translateY(-3px);
+  border-color: #4388ff;
+  background: #192c49;
+}
+
+.network-card.active-network {
+  border: 1px solid #4388ff;
+  background: linear-gradient(135deg, #19375f, #14233a);
+  box-shadow: 0 0 20px rgba(55, 125, 255, 0.16);
+}
+
+.network-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  font-size: 24px;
+  background: #203755;
+}
+
+.ethereum-icon {
+  color: #91b9ff;
+}
+
+.base-icon {
+  color: #9bbcff;
+}
+
+.portfolio-table-wrapper {
+  border: 1px solid #263852;
+  border-radius: 13px;
+  overflow-x: auto;
+}
+
+.portfolio-table {
+  background: #101c2e;
+  color: #e8eefc;
+}
+
+.portfolio-table th {
+  background: #182942;
+  color: #91a9cc;
+  padding: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.portfolio-table td {
+  padding: 15px;
+  border-top: 1px solid #263852;
+}
+
+.portfolio-table tbody tr:hover {
+  background: #172943;
+}
+
+.explorer-link {
+  color: #79aaff;
+  text-decoration: none;
+}
+
+.explorer-link:hover {
+  color: #b5d1ff;
+}
+/* NEXORA PRO BACKGROUND */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 15% 10%,
+      rgba(35, 91, 180, 0.18),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(20, 75, 160, 0.13),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #070d18 0%,
+      #0b1424 50%,
+      #080f1c 100%
+    );
+  background-attachment: fixed;
+  color: #e8eefc;
+}
+
+#root {
+  min-height: 100vh;
+}
+.portfolio-dashboard {
+  position: relative;
+  isolation: isolate;
+}
+
+.portfolio-dashboard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(50, 115, 220, 0.07),
+      transparent 55%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+/* NEXORA 3D BRANDING */
+
+/* NEXORA 3D TITLE */
+
+.hero .nexora-title {
+  display: inline-block;
+  margin: 0 0 22px;
+  font-size: clamp(56px, 9vw, 100px);
+  font-weight: 1000;
+  letter-spacing: 12px;
+  line-height: 1.1;
+
+  background: linear-gradient(
+    180deg,
+    #eaf5ff 0%,
+    #c5def5 30%,
+    #83b9e8 65%,
+    #6598cc 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter:
+    drop-shadow(0 2px 0 #9fc7eb)
+    drop-shadow(0 5px 0 #477eae)
+    drop-shadow(0 8px 0 #244f7c)
+    drop-shadow(0 0 12px rgba(65, 145, 215, 0.35));
+
+  animation: nexoraFloat 3s ease-in-out infinite;
+}
+
+@keyframes nexoraFloat {
+  0%, 100% {
+    transform: perspective(500px) rotateX(12deg) translateY(0);
+  }
+  50% {
+    transform: perspective(500px) rotateX(12deg) translateY(-7px);
+  }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(circle, #8bbbd8 2px, transparent 3px),
+    radial-gradient(circle, rgba(75, 145, 190, 0.25) 5px, transparent 7px),
+    linear-gradient(30deg, transparent 49.5%, rgba(75, 145, 190, 0.2) 50%, transparent 50.5%),
+    linear-gradient(150deg, transparent 49.5%, rgba(75, 145, 190, 0.2) 50%, transparent 50.5%);
+
+  background-size: 100px 100px;
+  opacity: 0.45;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 45px 30px;
+  border: 1px solid rgba(65, 160, 255, 0.2);
+  border-radius: 22px;
+
+  background:
+  radial-gradient(circle at 15% 20%, rgba(0, 145, 255, 0.2), transparent 35%),
+  radial-gradient(circle at 85% 80%, rgba(0, 220, 255, 0.12), transparent 35%),
+  linear-gradient(135deg, #071629, #0b2340, #061323);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.12),
+    inset 0 1px rgba(36, 112, 184, 0.15);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .intro {
+  color: #ffffff;
+}
+
+.wallet-panel h2 {
+  color: #ffffff;
+}
+
+.transactions-panel h2 {
+  color: #ffffff;
+}
+.hero h1 {
+  color: #725ac1;
+}
